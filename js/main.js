@@ -167,9 +167,9 @@
         <input type="hidden" class="amount" value="${item.amount}" name="goodamount${index + 1}">
        
        <div class="itemordered__amount">
-          <button class="remove">-</button>
+          <button type="button" class="remove">-</button>
           <span class="amount">${item.amount}</span>
-          <button class="add">+</button>
+          <button type="button" class="add">+</button>
         </div>
           `;
             orderInputWrapper.prepend(cartItem);
