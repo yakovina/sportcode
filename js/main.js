@@ -153,15 +153,18 @@
         order.classList.add('active');
         orderInputWrapper.textContent="";
         orderFullPrice.textContent="";
-        goodsInThePocket.forEach((item, index) => {
-          let cartItem = document.createElement('div');
-          cartItem.classList.add('itemordered');
-          cartItem.innerHTML = `
+        if(goodsInThePocket.length) {
+          order.querySelector('form').style.display='';
+          order.querySelector('.noitems').style.display='none';
+          goodsInThePocket.forEach((item, index) => {
+            let cartItem = document.createElement('div');
+            cartItem.classList.add('itemordered');
+            cartItem.innerHTML = `
            <div class="itemordered__name">${item.name}</div>
         <div class="itemordered__price">${item.price}грн.</div>
-        <input type="hidden" value="${item.name}" name="good${index+1}">
-         <input type="hidden" value="${item.price}" name="goodprice${index+1}">
-        <input type="hidden" class="amount" value="${item.amount}" name="goodamount${index+1}">
+        <input type="hidden" value="${item.name}" name="good${index + 1}">
+         <input type="hidden" value="${item.price}" name="goodprice${index + 1}">
+        <input type="hidden" class="amount" value="${item.amount}" name="goodamount${index + 1}">
        
        <div class="itemordered__amount">
           <button class="remove">-</button>
@@ -169,37 +172,46 @@
           <button class="add">+</button>
         </div>
           `;
-          orderInputWrapper.prepend(cartItem);
-          cartItem.querySelector('.add').addEventListener('click', function () {
-            item.amount++;
-            this.parentElement.querySelector('.amount').textContent = item.amount;
-            orderFullPrice.textContent = countTotalPrice();
-            cartItem.querySelector('.amount').value = item.amount;
-            order.querySelector('.totalprice').value=countTotalPrice();
-            order.querySelector('.foolamount').value=goodsInThePocket.length;
-
-          })
-          cartItem.querySelector('.remove').addEventListener('click', function () {
-            item.amount--;
-            if (item.amount > 0) {
+            orderInputWrapper.prepend(cartItem);
+            cartItem.querySelector('.add').addEventListener('click', function () {
+              item.amount++;
               this.parentElement.querySelector('.amount').textContent = item.amount;
-            } else {
-              cartItem.remove();
-              goodsInThePocket.splice(index, 1);
-            }
+              orderFullPrice.textContent = countTotalPrice();
+              cartItem.querySelector('.amount').value = item.amount;
+              order.querySelector('.totalprice').value = countTotalPrice();
+              order.querySelector('.foolamount').value = goodsInThePocket.length;
+              goodsAmonuntContaner.textContent = goodsInThePocket.length;
+            })
+            cartItem.querySelector('.remove').addEventListener('click', function () {
+              item.amount--;
+              if (item.amount > 0) {
+                this.parentElement.querySelector('.amount').textContent = item.amount;
+              } else {
+                cartItem.remove();
+                goodsInThePocket.splice(index, 1);
+                if(!goodsInThePocket.length){
+                  order.querySelector('form').style.display='none';
+                  order.querySelector('.noitems').style.display='block';
+                }
+              }
+              cartItem.querySelector('.amount').value = item.amount;
+              orderFullPrice.textContent = countTotalPrice();
+              order.querySelector('.totalprice').value = countTotalPrice();
+              order.querySelector('.foolamount').value = goodsInThePocket.length;
+              goodsAmonuntContaner.textContent = goodsInThePocket.length;
+            })
             cartItem.querySelector('.amount').value = item.amount;
             orderFullPrice.textContent = countTotalPrice();
-            order.querySelector('.totalprice').value=countTotalPrice();
-            order.querySelector('.foolamount').value=goodsInThePocket.length;
+            order.querySelector('.totalprice').value = countTotalPrice();
+            order.querySelector('.foolamount').value = goodsInThePocket.length;
+            goodsAmonuntContaner.textContent = goodsInThePocket.length;
 
           })
-          cartItem.querySelector('.amount').value = item.amount;
-          orderFullPrice.textContent = countTotalPrice();
-          order.querySelector('.totalprice').value=countTotalPrice();
-          order.querySelector('.foolamount').value=goodsInThePocket.length;
-
-
-        })
+        }
+        else{
+          order.querySelector('form').style.display='none';
+          order.querySelector('.noitems').style.display='block';
+        }
 
       })
     }
