@@ -262,6 +262,7 @@
 
   function closeBurger() {
     modal.classList.remove('opened')
+    burger.classList.remove('active');
   }
 
   jQuery(function ($) {
