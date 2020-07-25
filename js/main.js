@@ -5,14 +5,6 @@
     responsiveWidth: 768,
     normalScrollElements: '.scrollable-element',
     anchors: ['home', 'about-us', 'ktsport', 'whey', 'tribis', 'balancelady', 'balanceman', 'lcarnitine', 'chondroitin', 'energyboost', 'bcaa', 'investigations', 'contact', 'footer'],
-    onLeave: function (index, nextIndex, direction) {
-      if (nextIndex.isFirst == !0) {
-        if (window.innerWidth >= 767) {
-          var video = document.getElementById('video');
-          video.play()
-        }
-      }
-    }
 
   });
 
@@ -162,9 +154,9 @@
             cartItem.innerHTML = `
            <div class="itemordered__name">${item.name}</div>
         <div class="itemordered__price">${item.price}грн.</div>
-        <input type="hidden" value="${item.name}" name="good${index + 1}">
-         <input type="hidden" value="${item.price}" name="goodprice${index + 1}">
-        <input type="hidden" class="amount" value="${item.amount}" name="goodamount${index + 1}">
+        <input type="hidden" value="${item.name}" name="good[][name]" class="good">
+         <input type="hidden" value="${item.price}" name="good[][costPerItem]">
+        <input type="hidden" class="amount" value="${item.amount}" name="good[][amount]">
        
        <div class="itemordered__amount">
           <button type="button" class="remove">-</button>
@@ -305,8 +297,8 @@
   })
   $("#order form").submit(function (e) {
     e.preventDefault()
-    console.dir($(this).serialize());
     $.ajax({
+
       type: "POST", url: "sendMessageask2.php", data: $(this).serialize(), success: function (response) {
         $(this).find("input").val("");
         document.querySelector('#order').classList.remove('active');

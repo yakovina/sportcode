@@ -1,5 +1,5 @@
 <?php
-$recepient = "lisports.com.ua@gmail.com";
+$recepient = "sasha.yakovina@gmail.com";
 $recepient2 = isset($_POST["email"]) ? clearIncomingParameter($_POST["email"]) : null;
 
 $sitename = "LISporst.com.ua";
@@ -14,4 +14,9 @@ $arrGoods = array();
 $aDoor = $_POST['other'];
 $comma_separated = implode(",", $aDoor);
 var_dump($aDoor);
+
+
+foreach ($aDoor as &$value) {
+
+}
 ?>
