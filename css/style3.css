@@ -352,13 +352,22 @@ body {
     animation: arrow 2s ease-in 1s infinite;
 }
 
-.mainscreen .swiper-button-next:after, .mainscreen .swiper-button-prev:after{
- background-image:  linear-gradient(to bottom, #ff2500, #fff400);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: #0B2349;
+.mainscreen .swiper-button-prev{
+    transform: rotate(180deg);
+    transform-origin: 50% 50%;
 }
 
+.mainscreen .swiper-button-next:after, .mainscreen .swiper-button-prev:after{
+ background-image: url("../img/arrows.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    width: 60px;
+    height: 40px;
+    content: '';
+}
+.mainscreen .swiper-button-prev:after{
+
+}
 @keyframes arrow {
     0%{
         transform: translateX(0);
@@ -546,8 +555,8 @@ body {
         padding-top: 60px;
     }
     .mainscreen .swiper-button-next, .mainscreen .swiper-button-prev {
-        top: 97px;
-        width: 21px;
+        top: 53%;
+        width: 35px;
         outline: none;
     }
 
@@ -559,10 +568,6 @@ body {
         display: none;
     }
 
-    .mainscreen .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
-        top: 75px;
-        bottom: auto;
-    }
 
     .mainscreen .swiper-pagination-bullet {
         background: #ff3a28;
