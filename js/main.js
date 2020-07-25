@@ -50,22 +50,22 @@
 
 
 
-  function changeVideo() {
-    var video = document.getElementById('video');
-    if (window.innerWidth <= 767) {
-      document.getElementById('video-container').innerHTML = "";
-      document.getElementById('mainscreenimg').style.display = "block";
-    } else {
-      document.getElementById('video-container').innerHTML = '<video autoplay muted poster="video/header.jpg" class="mainscreen__video" id="video">\n' +
-        '                <source src="video/head.mp4" type=\'video/mp4; codecs="avc1.42E01E, mp4a.40.2"\'>\n' +
-        '            </video>';
-      document.getElementById('mainscreenimg').style.display = "none";
+  // function changeVideo() {
+  //   var video = document.getElementById('video');
+  //   if (window.innerWidth <= 767) {
+  //     document.getElementById('video-container').innerHTML = "";
+  //     document.getElementById('mainscreenimg').style.display = "block";
+  //   } else {
+  //     document.getElementById('video-container').innerHTML = '<video autoplay muted poster="video/header.jpg" class="mainscreen__video" id="video">\n' +
+  //       '                <source src="video/head.mp4" type=\'video/mp4; codecs="avc1.42E01E, mp4a.40.2"\'>\n' +
+  //       '            </video>';
+  //     document.getElementById('mainscreenimg').style.display = "none";
+  //
+  //   }
+  // }
 
-    }
-  }
-
-  changeVideo()
-  window.addEventListener('resize', changeVideo);
+  // changeVideo()
+  // window.addEventListener('resize', changeVideo);
 
 
   function refactorBottle() {
