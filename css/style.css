@@ -233,7 +233,8 @@ body {
     position: relative;
     display: flex;
 }
-.navigation__link img{
+
+.navigation__link img {
     height: 20px;
     position: absolute;
     top: 0;
@@ -242,9 +243,10 @@ body {
     margin-left: 5px;
 }
 
-#nav-home{
+#nav-home {
     color: #f43d2f;
 }
+
 .navigation__link:after {
     content: "";
     position: absolute;
@@ -313,7 +315,8 @@ body {
     box-sizing: border-box;
 
 }
-.mainscreen__slide .container{
+
+.mainscreen__slide .container {
     width: 95%;
     max-width: none;
     display: flex;
@@ -324,20 +327,57 @@ body {
     padding-bottom: 30vmin;
 }
 
-.mainscreen__line{
+.mainscreen__line {
     width: 12.55vmin;
     margin-bottom: 3.854vmin;
 }
-.mainscreen__line img{
+
+.mainscreen__line img {
     width: 100%;
 }
-.mainscreen__header{
+
+.mainscreen__header {
     text-align: center;
     color: #ffffff;
     font-size: 7.796vmin;
     font-weight: 900;
     text-transform: uppercase;
     margin-bottom: 4.16vmin;
+}
+
+.mainscreen .swiper-button-next, .mainscreen .swiper-button-prev {
+    /*top: 148px;*/
+    width: 60px;
+    outline: none;
+}
+.mainscreen .swiper-button-next{
+    animation: arrow 2s ease-in 1s infinite;
+}
+
+.mainscreen .swiper-button-next:after, .mainscreen .swiper-button-prev:after{
+ background-image:  linear-gradient(to bottom, #ff2500, #fff400);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #0B2349;
+}
+
+@keyframes arrow {
+    0%{
+        transform: translateX(0);
+    }
+    10%{
+        transform: translateX(30%);
+    }
+    20%{
+        transform: translateX(0);
+    }
+    30%{
+        transform: translateX(30%);
+    }
+    40%{
+        transform: translateX(0);
+    }
+
 }
 
 .offer {
@@ -367,13 +407,14 @@ body {
     margin: 0 1.85vmin;
     margin-left: -1.85vmin;
 }
+
 .offer__equal {
     width: 9.53vmin;
     margin: 0 1.85vmin;
 }
 
 
-.banka__desc{
+.banka__desc {
     color: #ffffff;
     font-weight: 600;
     font-size: 3.88vmin;
@@ -381,12 +422,14 @@ body {
     text-transform: uppercase;
     text-align: center;
 }
-.gift{
+
+.gift {
     position: absolute;
     left: 8vmin;
     top: 41vmin;
 }
-.gift__header{
+
+.gift__header {
     font-weight: 600;
     font-size: 3.88vmin;
     text-transform: uppercase;
@@ -395,74 +438,93 @@ body {
     text-align: center;
     white-space: nowrap;
 }
-.gift__header .gift__img{
+
+.gift__header .gift__img {
     position: absolute;
     width: 56.8vmin;
     left: 50%;
     transform: translate(-50%, 0);
     bottom: -0.73vmin;
 }
-.gift__header span{
+
+.gift__header span {
     color: #ff3e31;
 }
-.gift__list{
+
+.gift__list {
     margin-top: 2.27vmin;
     margin-left: -2vmin;
 }
-.gift__list span{
+
+.gift__list span {
     display: block;
     color: #ffffff;
     font-size: 1.66vmin;
     font-weight: 600;
     text-transform: uppercase;
 }
-.mob{
+
+.mob {
     display: none;
 }
-.desk{
+
+.desk {
     display: block;
 }
-.mainscreen{
+
+.mainscreen {
     background-color: #0b0b0b;
     height: 100vh;
 }
-.mainscreen .container{
+
+.mainscreen .container {
     width: 100vw;
     max-width: none;
     padding-top: 40px;
 
 }
-.mainscreen__slide{
-   display: flex;
+
+.mainscreen__slide {
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
-.mainscreen .swiper-pagination-bullet-active{
+
+.mainscreen .swiper-pagination-bullet-active {
     background: #f43d2f;
 }
-.mainscreen__slide img{
+
+.mainscreen__slide img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-@media (max-width: 500px){
-    .mainscreen .container{
+@media (max-width: 500px) {
+    .mainscreen .container {
         padding-top: 60px;
     }
-    .mob{
+    .mainscreen .swiper-button-next, .mainscreen .swiper-button-prev {
+        top: 97px;
+        width: 21px;
+        outline: none;
+    }
+
+    .mob {
         display: block;
     }
-    .desk{
+
+    .desk {
         display: none;
     }
-    .mainscreen   .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction
-    {
+
+    .mainscreen .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
         top: 75px;
         bottom: auto;
     }
-    .mainscreen  .swiper-pagination-bullet {
+
+    .mainscreen .swiper-pagination-bullet {
         background: #ff3a28;
     }
 

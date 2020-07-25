@@ -34,11 +34,8 @@
     loop: false,
     slidesPerView: 1,
     // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
     lazy: true,
+    loop: true,
     // Navigation arrows
     navigation: {
       nextEl: '.mainscreen .swiper-button-next',
