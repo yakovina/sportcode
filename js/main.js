@@ -9,14 +9,14 @@
   });
 
 
-  var mySwiper = new Swiper('.swiper-container', {
+  var mySwiper = new Swiper('.investigations .swiper-container', {
     // Optional parameters
     direction: 'horizontal',
     loop: false,
     slidesPerView: 1,
     // If we need pagination
     pagination: {
-      el: '.swiper-pagination',
+      el: '.investigations .swiper-pagination',
       clickable: true
     },
 
