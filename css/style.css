@@ -53,6 +53,7 @@ body {
     width: 100%;
     max-width: none;
     box-sizing: border-box;
+    background-color: #ffffff;
     /*width: 95%;*/
     /*margin-left: 5%;*/
 }
@@ -119,7 +120,7 @@ body {
     position: fixed;
     height: 100vh;
     background-color: #fff;
-    padding-top: 120px;
+    padding-top: 145px;
 }
 
 .modal.opened {
@@ -173,7 +174,7 @@ body {
 
 @media screen and (max-width: 860px) {
     .modal {
-        padding-top: 70px;
+        padding-top: 100px;
     }
 
     .header__logo {
@@ -234,18 +235,15 @@ body {
     display: flex;
 }
 
-.navigation__link img {
+#nav-home img {
     height: 20px;
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(25px, -10px) rotate(45deg);
+    transform: translate(-14px, 5px) rotate(45deg);
     margin-left: 5px;
 }
 
-#nav-home {
-    color: #f43d2f;
-}
 
 .navigation__link:after {
     content: "";
@@ -451,6 +449,34 @@ body {
     color: #ff3e31;
 }
 
+
+.mainscreen__ac{
+    position: fixed;
+    top: 108px;
+    color: #ffffff;
+    font-size: 18px;
+    left: 80%;
+    background:#ff2500;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    padding: 8px;
+    border-radius: 0 0 5px 5px;
+    text-decoration: none;
+    animation: accia .3s ease-in .6s forwards;
+    transform: translateY(-100%);
+    z-index: -1;
+    padding-right: 40px;
+}
+
+@keyframes accia {
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+
+}
+
 .gift__list {
     margin-top: 2.27vmin;
     margin-left: -2vmin;
@@ -500,7 +526,21 @@ body {
     height: 100%;
     object-fit: contain;
 }
-
+@media (max-width: 768px) {
+    .mainscreen__ac{
+        position: absolute;
+        top: 60px;
+        color: #ffffff;
+        font-size: 18px;
+        z-index: -1;
+        left: 75%;
+        padding: 8px;
+        padding-right: 40px;
+        /* background-color: #ffffff; */
+        border-radius: 0 0 5px 5px;
+        /* color: red;*/
+    }
+}
 @media (max-width: 500px) {
     .mainscreen .container {
         padding-top: 60px;
@@ -527,7 +567,19 @@ body {
     .mainscreen .swiper-pagination-bullet {
         background: #ff3a28;
     }
-
+    .mainscreen__ac{
+        position: absolute;
+        top: 60px;
+        color: #ffffff;
+        font-size: 18px;
+        z-index: -1;
+        left: 66%;
+        padding: 8px;
+        padding-right: 40px;
+        /* background-color: #ffffff; */
+        border-radius: 0 0 5px 5px;
+        /* color: red;*/
+    }
 
 }
 
