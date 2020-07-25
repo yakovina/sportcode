@@ -410,10 +410,33 @@ body {
 .desk{
     display: block;
 }
+.mainscreen{
+    background-color: #0b0b0b;
+    height: 100vh;
+}
+.mainscreen .container{
+    width: 100vw;
+    max-width: none;
+    padding-top: 40px;
+
+}
+.mainscreen__slide{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.mainscreen .swiper-pagination-bullet-active{
+    background: #f43d2f;
+}
+.mainscreen__slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
 @media (max-width: 500px){
     .mainscreen .container{
-        width: 100vw;
         padding-top: 60px;
     }
     .mob{
@@ -422,6 +445,15 @@ body {
     .desk{
         display: none;
     }
+    .mainscreen   .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction
+    {
+        top: 75px;
+        bottom: auto;
+    }
+    .mainscreen  .swiper-pagination-bullet {
+        background: #ff3a28;
+    }
+
 
 }
 

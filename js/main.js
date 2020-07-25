@@ -28,6 +28,30 @@
 
     // And if we need scrollbar
   })
+  var mainscreenSwiper = new Swiper('.mainscreen .swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: false,
+    slidesPerView: 1,
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    autoplay: {
+      delay: 5000,
+    },
+    lazy: true,
+    // Navigation arrows
+    navigation: {
+      nextEl: '.mainscreen .swiper-button-next',
+      prevEl: '.mainscreen .swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+  })
+
+
 
   function changeVideo() {
     var video = document.getElementById('video');
