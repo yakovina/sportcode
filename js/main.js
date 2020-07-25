@@ -38,9 +38,6 @@
       el: '.swiper-pagination',
       clickable: true
     },
-    autoplay: {
-      delay: 5000,
-    },
     lazy: true,
     // Navigation arrows
     navigation: {
